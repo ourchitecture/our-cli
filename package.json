@@ -1,0 +1,68 @@
+{
+    "name": "@ourchitecture/our-cli",
+    "version": "0.0.1",
+    "license": "ISC",
+    "displayName": "Ourchitecture CLI",
+    "description": "Ourchitecture CLI with plug-ins",
+    "repository": "https://github.com/ourchitecture/our-cli",
+    "homepage": "https://github.com/ourchitecture/our-cli",
+    "bugs": "https://github.com/ourchitecture/our-cli/issues",
+    "keywords": [
+        "oclif"
+    ],
+    "author": "Ourchitecture",
+    "contributors": [
+        { "name": "Eric Swanson (@ericis)" }
+    ],
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "bin": {
+        "our": "./bin/run"
+    },
+    "dependencies": {
+        "@oclif/command": "^1.5.6",
+        "@oclif/config": "^1.9.0",
+        "@oclif/errors": "^1.2.2",
+        "@oclif/plugin-help": "^2.1.4",
+        "tslib": "^1.10.0"
+    },
+    "devDependencies": {
+        "@oclif/dev-cli": "^1.19.5",
+        "@oclif/test": "^1.2.1",
+        "@oclif/tslint": "^3.1.0",
+        "@types/chai": "^4.1.6",
+        "@types/mocha": "^5.2.6",
+        "@types/node": "^10.14.12",
+        "chai": "^4.2.0",
+        "globby": "^8.0.2",
+        "mocha": "^5.2.0",
+        "nyc": "^14.1.1",
+        "rimraf": "^2.6.3",
+        "ts-node": "^7.0.1",
+        "tslint": "^5.18.0",
+        "typescript": "^3.5.2"
+    },
+    "files": [
+        "/bin",
+        "/lib",
+        "/npm-shrinkwrap.json",
+        "/oclif.manifest.json"
+    ],
+    "main": "lib/index.js",
+    "oclif": {
+        "commands": "./lib/commands",
+        "bin": "our",
+        "plugins": [
+            "@oclif/plugin-help"
+        ]
+    },
+    "scripts": {
+        "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
+        "posttest": "tslint -p test -t stylish",
+        "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+        "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+        "version": "oclif-dev readme && git add README.md"
+    },
+    "types": "lib/index.d.ts"
+}

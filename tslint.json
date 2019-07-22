@@ -1,0 +1,9 @@
+{
+    "extends": "@oclif/tslint",
+    "rules": {
+        "indent": [true, "spaces", 4],
+        "ter-indent": [true, 4],
+        "object-curly-spacing": [true, "always"],
+        "no-empty-line-after-opening-brace": false
+    }
+}

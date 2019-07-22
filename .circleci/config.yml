@@ -1,0 +1,33 @@
+---
+version: 2
+jobs:
+    node-latest: &test
+        docker:
+            - image: node:latest
+        working_directory: ~/cli
+        steps:
+            - checkout
+            - run:
+                    name: Install dependencies
+                    command: npm ci
+            - run: ./bin/run --version
+            - run: ./bin/run --help
+            - run:
+                    name: Testing
+                    command: npm test
+            - run:
+                    name: Submitting code coverage to codecov
+                    command: |
+                        ./node_modules/.bin/nyc report --reporter text-lcov > coverage.lcov
+                        curl -s https://codecov.io/bash | bash
+    node-8:
+        <<: *test
+        docker:
+            - image: node:8
+
+workflows:
+    version: 2
+    "@ourchitecture/our-cli":
+        jobs:
+            - node-latest
+            - node-8
