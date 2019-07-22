@@ -19,7 +19,8 @@ jobs:
             - run:
                     name: Submitting code coverage to codecov
                     command: |
-                        ./node_modules/.bin/nyc report --reporter text-lcov > coverage.lcov
+                        npx nyc report --extension .ts --reporter text-lcov > coverage.lcov
+                        cat coverage.lcov
                         curl -s https://codecov.io/bash | bash
     node-8:
         <<: *test

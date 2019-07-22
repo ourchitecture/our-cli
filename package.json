@@ -62,6 +62,7 @@
         "posttest": "tslint -p test -t stylish",
         "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
         "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+        "test:report": "nyc --extension .ts report",
         "version": "oclif-dev readme && git add README.md"
     },
     "types": "lib/index.d.ts"
