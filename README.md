@@ -1,5 +1,9 @@
-@ourchitecture/our-cli
+# Ourchitecture CLI
 ======================
+
+[![CircleCI](https://circleci.com/gh/ourchitecture/our-cli.svg?style=svg)](https://circleci.com/gh/ourchitecture/our-cli)
+
+[![codecov](https://codecov.io/gh/ourchitecture/our-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/ourchitecture/our-cli)
 
 Ourchitecture CLI with plug-ins
 
