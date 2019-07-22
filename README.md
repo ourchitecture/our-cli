@@ -1,18 +1,14 @@
 # Ourchitecture CLI
 ======================
 
-[![CircleCI](https://circleci.com/gh/ourchitecture/our-cli.svg?style=svg)](https://circleci.com/gh/ourchitecture/our-cli)
-
-[![codecov](https://codecov.io/gh/ourchitecture/our-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/ourchitecture/our-cli)
-
 Ourchitecture CLI with plug-ins
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@ourchitecture/our-cli.svg)](https://npmjs.org/package/@ourchitecture/our-cli)
-[![CircleCI](https://circleci.com/gh/https://github.com/ourchitecture/our-cli/our-cli/tree/master.svg?style=shield)](https://circleci.com/gh/https://github.com/ourchitecture/our-cli/our-cli/tree/master)
-[![Codecov](https://codecov.io/gh/https://github.com/ourchitecture/our-cli/our-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/https://github.com/ourchitecture/our-cli/our-cli)
+[![CircleCI](https://circleci.com/gh/ourchitecture/our-cli.svg?style=svg)](https://circleci.com/gh/ourchitecture/our-cli)
+[![codecov](https://codecov.io/gh/ourchitecture/our-cli/branch/master/graph/badge.svg)](https://codecov.io/gh/ourchitecture/our-cli)
 [![Downloads/week](https://img.shields.io/npm/dw/@ourchitecture/our-cli.svg)](https://npmjs.org/package/@ourchitecture/our-cli)
-[![License](https://img.shields.io/npm/l/@ourchitecture/our-cli.svg)](https://github.com/https://github.com/ourchitecture/our-cli/our-cli/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/@ourchitecture/our-cli.svg)](https://github.com/ourchitecture/our-cli/blob/master/package.json)
 
 <!-- toc -->
 * [Usage](#usage)
