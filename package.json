@@ -24,11 +24,12 @@
         "our": "./bin/run"
     },
     "scripts": {
-        "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
-        "posttest": "tslint -p test -t stylish",
         "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+        "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
+        "build": "tsc",
         "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
         "test:report": "nyc --extension .ts report",
+        "posttest": "tslint -p test -t stylish",
         "version": "oclif-dev readme && git add README.md",
         "prerelease": "npm version prerelease --preid=alpha -m \"Bumped version number to %s\""
     },
