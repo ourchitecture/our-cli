@@ -33,13 +33,6 @@ jobs:
             - attach_workspace:
                 at: ~/cli
             - run:
-                name: Bump version
-                command: |
-                    git config user.name $CIRCLE_USERNAME
-                    npm version prerelease --preid=alpha -m "Bumped version number to %s [ci skip]"
-                    git push origin master
-                    git push --tags
-            - run:
                 name: Authenticate with registry
                 command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
             - run:
