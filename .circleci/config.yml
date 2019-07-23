@@ -33,11 +33,17 @@ jobs:
             - attach_workspace:
                 at: ~/cli
             - run:
+                name: Prepare package
+                command: npm run prepack
+            - run:
                 name: Authenticate with registry
                 command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/cli/.npmrc
             - run:
                 name: Publish package
                 command: npm publish --access public
+            - run:
+                name: Package cleanup
+                command: npm run postpack
 
 workflows:
     version: 2
