@@ -17,9 +17,6 @@ jobs:
                     name: Testing
                     command: npm test
             - run:
-                    name: Building
-                    command: npm build
-            - run:
                     name: Submitting code coverage to codecov
                     command: |
                         npx nyc report --extension .ts --reporter text-lcov > coverage.lcov

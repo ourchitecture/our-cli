@@ -24,7 +24,7 @@
         "our": "./bin/run"
     },
     "scripts": {
-        "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+        "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
         "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
         "build": "tsc",
         "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
