@@ -1,7 +1,7 @@
 ---
 version: 2
 jobs:
-    node-latest: &test
+    test:
         docker:
             - image: node:latest
         working_directory: ~/cli
@@ -22,14 +22,42 @@ jobs:
                         npx nyc report --extension .ts --reporter text-lcov > coverage.lcov
                         cat coverage.lcov
                         curl -s https://codecov.io/bash | bash
-    node-8:
-        <<: *test
+            - persist_to_workspace:
+                root: ~/repo
+                paths: [.]
+    deploy:
         docker:
-            - image: node:8
+            - image: node:latest
+        steps:
+            - attach_workspace:
+                at: ~/repo
+            - run:
+                name: Bump version
+                command: |
+                    git config user.name $CIRCLE_USERNAME
+                    npm version prerelease --preid=alpha -m "Bumped version number to %s [ci skip]"
+                    git push origin master
+                    git push --tags
+            - run:
+                name: Authenticate with registry
+                command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+            - run:
+                name: Publish package
+                command: npm publish
 
 workflows:
     version: 2
     "@ourchitecture/our-cli":
         jobs:
-            - node-latest
-            - node-8
+            - test:
+                filters:
+                    tags:
+                        only: /^v.*/
+            - deploy:
+                requires:
+                    - test
+                filters:
+                    tags:
+                        only: /^v.*/
+                    branches:
+                        ignore: /.*/

@@ -11,6 +11,7 @@ Ourchitecture CLI with plug-ins
 [![License](https://img.shields.io/npm/l/@ourchitecture/our-cli.svg)](https://github.com/ourchitecture/our-cli/blob/master/package.json)
 
 <!-- toc -->
+* [Ourchitecture CLI](#ourchitecture-cli)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->

@@ -12,13 +12,23 @@
     ],
     "author": "Ourchitecture",
     "contributors": [
-        { "name": "Eric Swanson (@ericis)" }
+        {
+            "name": "Eric Swanson (@ericis)"
+        }
     ],
     "engines": {
         "node": ">=8.0.0"
     },
     "bin": {
         "our": "./bin/run"
+    },
+    "scripts": {
+        "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
+        "posttest": "tslint -p test -t stylish",
+        "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+        "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+        "test:report": "nyc --extension .ts report",
+        "version": "oclif-dev readme && git add README.md"
     },
     "dependencies": {
         "@oclif/command": "^1.5.6",
@@ -56,14 +66,6 @@
         "plugins": [
             "@oclif/plugin-help"
         ]
-    },
-    "scripts": {
-        "postpack": "rimraf oclif.manifest.json npm-shrinkwrap.json",
-        "posttest": "tslint -p test -t stylish",
-        "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
-        "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-        "test:report": "nyc --extension .ts report",
-        "version": "oclif-dev readme && git add README.md"
     },
     "types": "lib/index.d.ts"
 }
