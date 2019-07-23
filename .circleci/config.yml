@@ -23,14 +23,15 @@ jobs:
                         cat coverage.lcov
                         curl -s https://codecov.io/bash | bash
             - persist_to_workspace:
-                root: ~/repo
+                root: ~/cli
                 paths: [.]
     deploy:
         docker:
             - image: node:latest
+        working_directory: ~/cli
         steps:
             - attach_workspace:
-                at: ~/repo
+                at: ~/cli
             - run:
                 name: Bump version
                 command: |
