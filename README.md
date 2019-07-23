@@ -22,7 +22,7 @@ $ npm install -g @ourchitecture/our-cli
 $ our COMMAND
 running command...
 $ our (-v|--version|version)
-@ourchitecture/our-cli/0.0.2-alpha.4 win32-x64 node-v10.15.3
+@ourchitecture/our-cli/0.0.2-alpha.5 win32-x64 node-v10.15.3
 $ our --help [COMMAND]
 USAGE
   $ our COMMAND
@@ -52,7 +52,7 @@ EXAMPLE
   hello world from ./src/hello.ts!
 ```
 
-_See code: [src\commands\hello.ts](https://github.com/ourchitecture/our-cli/blob/v0.0.2-alpha.4/src\commands\hello.ts)_
+_See code: [src\commands\hello.ts](https://github.com/ourchitecture/our-cli/blob/v0.0.2-alpha.5/src\commands\hello.ts)_
 
 ## `our help [COMMAND]`
 
