@@ -12,6 +12,11 @@
             "type": "npm",
             "script": "test:report",
             "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "prerelease",
+            "problemMatcher": []
         }
     ]
 }

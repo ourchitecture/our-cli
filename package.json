@@ -28,7 +28,8 @@
         "prepack": "oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
         "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
         "test:report": "nyc --extension .ts report",
-        "version": "oclif-dev readme && git add README.md"
+        "version": "oclif-dev readme && git add README.md",
+        "prerelease": "npm version prerelease --preid=alpha -m \"Bumped version number to %s\""
     },
     "dependencies": {
         "@oclif/command": "^1.5.6",
